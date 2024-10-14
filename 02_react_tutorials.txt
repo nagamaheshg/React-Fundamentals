@@ -1,0 +1,246 @@
+### Folder Structure
+- node_modules
+Contains all dependencies required by the app. dependencies also listed in package.json
+
+-public
+    contains static assets including index.HTML(page template).
+    - index.html 
+    - title
+    - fonts
+    - css 
+    - favicon
+    - id = "root" - our entire app
+
+- src 
+
+    In simple from it's the brain of our app. this is where we will do all of our work.
+    src/index.js is javascript entry point.
+
+- .gitignore
+
+    Specifies which files source control (Git) Should ignore
+
+
+- Package.json
+
+    Every Node.js project has a package.json and it contains info about out project, for example list of dependencies and scripts
+
+- Package-lock.json
+
+    A snapshot of the entire dependency tree
+
+- README
+
+    The markdown file where you can share more info about that project for example build instruction and summary
+
+### Remove BoilerPlate
+
+- Remove src Folder
+- Create src Folder
+- Create index.js inside src
+- toggle sidebar cmd + BoilerPlate
+- Shortcuts settings/Keyboard Shortcuts
+
+### First components
+```js
+
+
+    function Greeting(){
+        return <h2> My First Component </h2>;
+    };
+
+    export default Greeting
+
+```
+    - start with capital letter
+    - must return jsx (html)
+    - always close tag <Greeting/>
+
+```js
+
+    import React from 'react'
+    import ReactDOM from 'react-dom/client'
+
+    function Greeting(){
+
+        return <h2> My First Component </h2>
+
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+
+    root.render(<Greeting />)
+```
+
+### Extensions and setting.json
+
+- Auto Rename tag
+- Highlight Matching tag
+- Customize in settings.json
+- Prettier
+- format on save
+- format on paste
+- Default Formatter (Prettier - code formatter)
+
+settings.json
+
+``` json
+
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.singleQuote": true,
+        "prettier.semi": false
+
+```
+
+- Emmet
+
+settings.json
+
+```json
+
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+},
+```
+
+- ES7 Snippet
+
+    - rafce ( arrow func with export)
+    - rfce (regular func with export)
+    - same as the file name
+    - react auto import
+    - uncheck
+    - React snippets > settings: import React on Top 
+
+### First Component in Details 
+
+    - start with capital letter
+    - must return something 
+    - JSX syntax (return html)
+    -  to make our lives easier
+    - calling function under the hood
+
+index.js
+
+```js
+
+    const Greeting = () => {
+        return React.createElement('h2', {}, 'hello World');
+
+    };
+```
+
+```js
+
+    function Greeting(){
+
+        return(
+            <div>
+            <h2> Hello World </h2>
+            </div>
+        );
+    }
+
+const Greeting = () => {
+    return React.createElement(
+        'div',
+        {},
+        React.createElement('h2', {}, 'hello world')
+    );
+};
+
+### JSX Rules
+
+- return single elements
+- semantics section/ article
+- Fragment - let's us group elements without adding extra node_modules
+
+```js
+
+return <React.Fragment> ... rest of the return </React.Fragment>
+
+// Shorthand
+
+- return <> ... rest of the return </>
+```
+- camelCase property naming convention
+
+``` js
+
+return(
+    <div tabIndex = {1}
+    <button onClick = {myFunction}> Click Me </button>
+    <label htmlFor='name'> Name </label>
+    <input readOnly = {true} id='name' />
+    </div>
+)
+
+// in html
+<div tabindex ="1">
+     <button onClick = "myFunction()"> Click Me </button>
+    <label htmlFor='name'> Name </label>
+    <input readOnly id='name' />
+</div>
+```
+- className instead of className
+
+```js
+return <div className='someValue'>hello</div>
+```
+
+- close every elements
+```js
+return <img />
+// or
+return  <input />
+```
+
+- formatting
+ - opening tag in the same return or ()
+
+ ```
+ function Greeting() {
+
+    return (
+        <>
+            <div className='someValue'>
+                <h3> Hello People </h3>
+                <ul>
+                    <li>
+                        <a href="#"> Hello World </a>
+                    </li>
+                </ul>
+            </div>
+            <h2> Hello World </h2>
+            <input type="text" name='' id=''/>
+        </>
+    );
+ }
+
+ ```
+ ### Nest Component
+
+ ```js
+
+ function Greeting(){
+
+    return(
+        <div>
+            <Person/>
+            <Message />
+        </div>
+    )
+ }
+
+ const Person = () => <h2> John Doe </h2>;
+ const Message = () => {
+    return <p> this is my message</p>;
+ };
+
+ ### React Developer Tools
+
+ - top right corner
+ - more tools/extenstions
+ - open Chrome web store

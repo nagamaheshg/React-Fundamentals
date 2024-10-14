@@ -1,0 +1,44 @@
+React is a javascript framework Developed by Facebook
+Popular building user interfaces
+React all about components. components are independent chunks of user interfaces.
+Independence(independent components isolate and reusable)
+Reusability
+Speed
+
+Goals:
+
+    Theory:
+        Understatnding the main building block and konw where to find useful info
+
+    Practice:
+
+        Apply the knowledge by building bunch of cool projects.
+
+
+Tutorial
+    Get familar with all of the major building blocks
+
+Projects:
+
+    After each new topic, build one or few cool projects
+
+Redux
+    Learn the most popular state management library
+
+Requirements:
+
+    HTML & CSS
+        Familiar with common elements - div, section, navbar. Understand primary styling principles
+
+    javascript
+
+        Arrow functions, array methods, spread operator, rest operator, destructuring etc.
+
+Installation
+
+    Node.js 
+    npx create-react-app tutorial
+    npm start
+
+
+
